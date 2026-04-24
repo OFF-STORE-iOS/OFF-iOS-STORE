@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFF HACK IOS - VIP HACK</title>
+    
+    <script>
+        function checkPassword() {
+            var password = prompt("الرجاء إدخال كلمة المرور للدخول:");
+            if (password !== "OFF") {
+                alert("كلمة المرور خطأ! سيتم إغلاق الصفحة.");
+                document.body.innerHTML = ""; // مسح محتوى الصفحة
+                window.location.href = "about:blank"; // توجيه لصفحة فارغة
+            }
+        }
+    </script>
+
     <style>
         body { 
             /* خلفية الهكر المقنع */
@@ -60,7 +72,7 @@
         .store-footer { color: #00eaff; font-size: 22px; font-weight: bold; display: block; }
     </style>
 </head>
-<body>
+<body onload="checkPassword()">
     <div class="premium-card">
         <h1 class="main-title">🔥 OFF HACK IOS 🔥</h1>
         <p class="sub-title">أهلاً بك في متجرنا الرسمي للهكر ببجي موبايل للآيفون</p>
@@ -75,4 +87,3 @@
     </div>
 </body>
 </html>
- 
