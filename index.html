@@ -4,21 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFF HACK IOS - VIP HACK</title>
-    
-    <script>
-        function checkPassword() {
-            var password = prompt("الرجاء إدخال كلمة المرور للدخول:");
-            if (password !== "OFF") {
-                alert("كلمة المرور خطأ! سيتم إغلاق الصفحة.");
-                document.body.innerHTML = ""; // مسح محتوى الصفحة
-                window.location.href = "about:blank"; // توجيه لصفحة فارغة
-            }
-        }
-    </script>
-
     <style>
         body { 
-            /* خلفية الهكر المقنع */
             background: #000 url('https://images.wallpapersden.com/image/download/anonymous-hacker-cool-mask_bWlmbGWUmZqaraWkpJRmbmdlrWZnZWU.jpg') no-repeat center center fixed; 
             background-size: cover;
             color: #fff; 
@@ -30,9 +17,9 @@
             align-items: center;
             min-height: 100vh;
             position: relative;
+            overflow: hidden;
         }
 
-        /* طبقة سوداء خفيفة لتبرز صورة الهكر وتوضح الكلام */
         body::before {
             content: "";
             position: absolute;
@@ -41,7 +28,56 @@
             z-index: 0;
         }
 
+        /* تصميم نافذة تسجيل الدخول الخاصة */
+        #login-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .login-box {
+            background: rgba(20, 20, 20, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #00eaff;
+            box-shadow: 0 0 20px #00eaff;
+            width: 80%;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        .login-box h2 { color: #00eaff; margin-bottom: 20px; font-size: 20px; }
+
+        .login-box input {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #111;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .login-box button {
+            background: #00eaff;
+            color: #000;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* محتوى الصفحة الأصلي (مخفي بالبداية) */
         .premium-card { 
+            display: none; 
             position: relative;
             z-index: 1;
             border: 4px solid #00eaff; 
@@ -55,35 +91,46 @@
 
         .main-title { color: #00eaff; font-size: 32px; text-shadow: 0 0 15px #00eaff; margin-bottom: 10px; }
         .sub-title { font-size: 18px; color: #eee; margin-bottom: 25px; }
-        
         .btn-premium { 
-            display: block; 
-            background: linear-gradient(45deg, #00eaff, #0088ff); 
-            color: #fff; 
-            padding: 18px; 
-            margin: 25px 0; 
-            border-radius: 15px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 20px;
+            display: block; background: linear-gradient(45deg, #00eaff, #0088ff); 
+            color: #fff; padding: 18px; margin: 25px 0; border-radius: 15px; 
+            text-decoration: none; font-weight: bold; font-size: 20px;
             box-shadow: 0 5px 15px rgba(0, 234, 255, 0.4);
         }
-
         .store-footer { color: #00eaff; font-size: 22px; font-weight: bold; display: block; }
     </style>
 </head>
-<body onload="checkPassword()">
-    <div class="premium-card">
+<body>
+
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2>الرجاء إدخال كلمة المرور</h2>
+            <input type="password" id="passInput" placeholder="Password">
+            <br>
+            <button onclick="checkPass()">دخول</button>
+        </div>
+    </div>
+
+    <div class="premium-card" id="mainContent">
         <h1 class="main-title">🔥 OFF HACK IOS 🔥</h1>
         <p class="sub-title">أهلاً بك في متجرنا الرسمي للهكر ببجي موبايل للآيفون</p>
-        
         <hr style="border: 0.5px solid #333; margin: 20px 0;">
-        
         <a href="https://mega.nz/file/8UVxzIyL#6TR7kbCU_M9nUVJ60E9bEfpO1SaLwOPgiRw8YKktf5s" class="btn-premium">تحميل ببجي iPA مهكرة</a>
-
         <span class="store-footer">CHEAT OFF VIP PUBG MOBILE</span>
-        
         <p style="font-size: 11px; color: #777; margin-top: 30px;">DEVELOPED BY OFF iOS TEAM</p>
     </div>
+
+    <script>
+        function checkPass() {
+            var pass = document.getElementById("passInput").value;
+            if (pass === "OFF") {
+                document.getElementById("login-overlay").style.display = "none";
+                document.getElementById("mainContent").style.display = "block";
+            } else {
+                alert("كلمة المرور خطأ!");
+            }
+        }
+    </script>
+
 </body>
 </html>
